@@ -201,30 +201,28 @@ body{
     height: 0;
     padding-top: 1576.2079%;
     padding-bottom: 0;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(63,69,81,0.16);
-    border-radius: 8px;
-    will-change: transform;">
+    overflow: hidden;">
 
     <iframe
       loading="lazy"
       style="
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        border: none;
-        margin: 0;
-        padding: 0;"
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border: none;
+      margin: 0;
+      padding: 0;"
       src="https://www.canva.com/design/DAHMPoduYUs/iFiSXbfIorDGM1leVe_p7Q/view?embed"
-      allowfullscreen="allowfullscreen"
+      allowfullscreen
       allow="fullscreen">
     </iframe>
 
   </div>
 
 </div>
+
 <script>
 
 const params = new URLSearchParams(window.location.search);
@@ -259,9 +257,7 @@ document.getElementById("openBtn")
 
     musicBtn.style.display = "block";
 
-    document.documentElement.style.overflow = "auto";
-document.body.style.overflow = "auto";
-document.body.style.webkitOverflowScrolling = "touch";
+    document.body.style.overflow = "auto";
 
   },1000);
 
