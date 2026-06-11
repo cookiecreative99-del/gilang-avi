@@ -1,311 +1,294 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wedding Invitation</title>
+<title>Wedding Invitation</title>
 
-    <meta property="og:title" content="Wedding Invitation">
-    <meta property="og:description" content="Gilang & Avi">
-    <meta property="og:image" content="https://gilang-avi.vercel.app/preview.jpg">
-    <meta property="og:url" content="https://gilang-avi.vercel.app">
-    <meta property="og:type" content="website">
-    <meta property="og:image:width" content="1080">
-    <meta property="og:image:height" content="1080">
+<meta property="og:title" content="Wedding Invitation">
+<meta property="og:description" content="Gilang & Avi">
+<meta property="og:image" content="https://gilang-avi.vercel.app/preview.jpg">
+<meta property="og:url" content="https://gilang-avi.vercel.app">
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1080">
+<meta property="og:image:height" content="1080">
 
-    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Cinzel", serif;
-        }
+<style>
 
-        body {
-            width: 100%;
-            min-height: 100vh;
-            overflow: hidden;
-            background: #a8a39d;
-        }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cinzel', serif;
+}
 
-        .cover {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            padding: 40px 24px;
-            background: url("background.jpg") center center / cover no-repeat;
-            transition: opacity 1s ease;
-        }
+html,
+body{
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+  background:#a8a39d;
+}
 
-        .cover.fade-out {
-            opacity: 0;
-        }
+.cover{
+  width:100%;
+  height:100vh;
+  position:relative;
+  background:url('background.jpg') center center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px 24px;
+  transition:opacity 1s ease;
+}
 
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.05);
-        }
+.cover.fade-out{
+  opacity:0;
+}
 
-        .content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-            color: #494c3b;
-            transform: translateY(220px);
-        }
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.05);
+}
 
-        .label {
-            color: #494c3b;
-            margin-bottom: 14px;
-            font-size: 15px;
-            letter-spacing: 1px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 1s ease forwards;
-            animation-delay: 0.2s;
-        }
+.content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:400px;
+  text-align:center;
+  color:#000;
+  transform:translateY(220px);
+}
 
-        .guest-name {
-            margin-bottom: 30px;
-            font-size: 38px;
-            font-weight: 600;
-            line-height: 1.3;
-            word-break: break-word;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 1s ease forwards;
-            animation-delay: 0.6s;
-        }
+.label{
+  font-size:15px;
+  margin-bottom:14px;
+  letter-spacing:1px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s ease forwards;
+  animation-delay:.2s;
+}
 
-        .open-hint {
-            margin-top: -10px;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #4b4b4b;
-            opacity: 0;
-            transform: translateY(20px);
-            animation:
-                fadeUp 1s ease forwards,
-                blink 2s ease-in-out infinite 2s;
-        }
+.guest-name{
+  font-size:38px;
+  font-weight:600;
+  line-height:1.3;
+  margin-bottom:30px;
+  word-break:break-word;
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s ease forwards;
+  animation-delay:.6s;
+}
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:58px;
+  background:#5c0120;
+  color:#fff;
+  border-radius:999px;
+  text-decoration:none;
+  font-size:20px;
+  font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeUp 1s ease forwards;
+  animation-delay:1s;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-        @keyframes blink {
-            0%,
-            100% {
-                opacity: 0.5;
-            }
+#canvaContainer{
+  display:none;
+  width:100%;
+  min-height:100vh;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
 
-            50% {
-                opacity: 1;
-            }
-        }
+.canva-wrapper{
+  position:relative;
+  width:100%;
+  overflow:visible;
+}
 
-        #canvaContainer {
-            display: none;
-            width: 100%;
-            min-height: 100vh;
-        }
+.canva-wrapper iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+  touch-action:pan-y;
+}
 
-        #musicToggle {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 9999;
-            display: none;
-            width: 52px;
-            height: 52px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.75);
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-        }
+#musicToggle{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+  background:rgba(0,0,0,.75);
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  z-index:9999;
+  display:none;
+}
 
-        @media (max-width: 480px) {
-            .content {
-                transform: translateY(200px);
-            }
+@media(max-width:480px){
 
-            .guest-name {
-                font-size: 32px;
-            }
-        }
-    </style>
+  .content{
+    transform:translateY(200px);
+  }
+
+  .guest-name{
+    font-size:32px;
+  }
+
+  .btn{
+    height:54px;
+    font-size:18px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
-    <audio id="bgMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
 
-    <button id="musicToggle">🔊</button>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-    <section class="cover">
-        <div class="overlay"></div>
+<button id="musicToggle">🔊</button>
 
-        <div class="content">
-            <div class="label">Dear,</div>
+<section class="cover">
 
-            <div class="guest-name" id="guestName">
-                Nama Tamu
-            </div>
+  <div class="overlay"></div>
 
-            <div class="open-hint">
-                (Klik amplop untuk membuka)
-            </div>
-        </div>
-    </section>
+  <div class="content">
 
-    <div id="canvaContainer">
-        <div
-            style="
-                position: relative;
-                width: 100%;
-                height: 0;
-                padding-top: 1576.2079%;
-                padding-bottom: 0;
-                box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
-                margin: 0;
-                overflow: hidden;
-                border-radius: 8px;
-                will-change: transform;
-            "
-        >
-            <iframe
-                loading="lazy"
-                src="https://www.canva.com/design/DAHMRlY4ecU/LaQNb1vd7h10DWeY-YUroQ/view?embed"
-                allowfullscreen="allowfullscreen"
-                allow="fullscreen"
-                style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    margin: 0;
-                    padding: 0;
-                    border: none;
-                "
-            ></iframe>
-        </div>
+    <div class="label">
+      Dear,
     </div>
 
-    <script>
-    const params = new URLSearchParams(window.location.search);
-    const guest = params.get("to");
+    <div class="guest-name" id="guestName">
+      Nama Tamu
+    </div>
 
-    if (guest) {
-        document.getElementById("guestName").innerText =
-            decodeURIComponent(guest);
-    }
+    <a href="#" class="btn" id="openBtn">
+      Buka Undangan
+    </a>
 
-    const music = document.getElementById("bgMusic");
-    const musicBtn = document.getElementById("musicToggle");
-    const cover = document.querySelector(".cover");
-    const canvaContainer = document.getElementById("canvaContainer");
+  </div>
 
-    let invitationOpened = false;
+</section>
 
-    function autoScroll() {
-    let autoScrolling = true;
-    const speed = 1.2; // kecepatan scroll
+<div id="canvaContainer">
 
-    function scrollStep() {
-        if (!autoScrolling) return;
+  <div class="canva-wrapper"
+       style="height:0; padding-top:1576.2079%;">
 
-        window.scrollBy(0, speed);
-        requestAnimationFrame(scrollStep);
-    }
+    <iframe
+      loading="lazy"
+      src="https://www.canva.com/design/DAHMRlY4ecU/LaQNb1vd7h10DWeY-YUroQ/view?embed&scrolling=true"
+      allowfullscreen
+      allow="fullscreen">
+    </iframe>
 
-    scrollStep();
+  </div>
 
-    // berhenti otomatis setelah 15 detik
-    setTimeout(() => {
-        autoScrolling = false;
-    }, 18000);
+</div>
 
-    // berhenti jika user scroll sendiri
-    window.addEventListener(
-        "wheel",
-        () => {
-            autoScrolling = false;
-        },
-        { once: true }
-    );
+<script>
 
-    window.addEventListener(
-        "touchmove",
-        () => {
-            autoScrolling = false;
-        },
-        { once: true }
-    );
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
+
+if(guest){
+  document.getElementById("guestName").innerText =
+    decodeURIComponent(guest);
 }
-    cover.addEventListener("click", function () {
-        if (invitationOpened) return;
 
-        invitationOpened = true;
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+const cover = document.querySelector(".cover");
+const canvaContainer = document.getElementById("canvaContainer");
 
-        music.play().catch(function (err) {
-            console.log(err);
-        });
+document.getElementById("openBtn")
+.addEventListener("click", function(e){
 
-        cover.classList.add("fade-out");
+  e.preventDefault();
 
-        setTimeout(function () {
-            cover.style.display = "none";
-            canvaContainer.style.display = "block";
-            musicBtn.style.display = "block";
-            document.body.style.overflow = "auto";
+  music.play().catch(function(err){
+    console.log(err);
+  });
 
-            // tunggu Canva termuat lalu auto-scroll
-            setTimeout(() => {
-                autoScroll();
-            }, 3000);
+  cover.classList.add("fade-out");
 
-        }, 1000);
-    });
+  setTimeout(function(){
 
-    musicBtn.addEventListener("click", function () {
-        if (music.paused) {
-            music.play();
-            musicBtn.innerHTML = "🔊";
-        } else {
-            music.pause();
-            musicBtn.innerHTML = "🔇";
-        }
-    });
+    cover.style.display = "none";
+
+    canvaContainer.style.display = "block";
+
+    musicBtn.style.display = "block";
+
+    document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
+
+    document.body.style.height = "auto";
+    document.documentElement.style.height = "auto";
+
+  },1000);
+
+});
+
+musicBtn.addEventListener("click", function(){
+
+  if(music.paused){
+
+    music.play();
+    musicBtn.innerHTML = "🔊";
+
+  }else{
+
+    music.pause();
+    musicBtn.innerHTML = "🔇";
+
+  }
+
+});
+
 </script>
+
 </body>
 </html>
