@@ -125,6 +125,15 @@ body{
   display:none;
   width:100%;
   min-height:100vh;
+  opacity:0;
+  transform:scale(1.02);
+  transition:opacity 1.2s ease,
+             transform 1.2s ease;
+}
+
+#canvaContainer.fade-in{
+  opacity:1;
+  transform:scale(1);
 }
 
 #musicToggle{
@@ -258,6 +267,10 @@ document.getElementById("openBtn")
     musicBtn.style.display = "block";
 
     document.body.style.overflow = "auto";
+
+    requestAnimationFrame(function(){
+      canvaContainer.classList.add("fade-in");
+    });
 
   },1000);
 
