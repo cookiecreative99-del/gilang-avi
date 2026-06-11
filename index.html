@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -30,6 +31,7 @@
   font-family:'Cinzel', serif;
 }
 
+html,
 body{
   width:100%;
   min-height:100vh;
@@ -125,6 +127,24 @@ body{
   display:none;
   width:100%;
   min-height:100vh;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+}
+
+.canva-wrapper{
+  position:relative;
+  width:100%;
+  overflow:visible;
+}
+
+.canva-wrapper iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+  display:block;
+  touch-action:pan-y;
 }
 
 #musicToggle{
@@ -195,26 +215,12 @@ body{
 
 <div id="canvaContainer">
 
-  <div style="
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-top: 1576.2079%;
-    padding-bottom: 0;
-    overflow: hidden;">
+  <div class="canva-wrapper"
+       style="height:0; padding-top:1576.2079%;">
 
     <iframe
       loading="lazy"
-      style="
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      border: none;
-      margin: 0;
-      padding: 0;"
-      src="https://www.canva.com/design/DAHMRlY4ecU/LaQNb1vd7h10DWeY-YUroQ/view?embed"
+      src="https://www.canva.com/design/DAHMRlY4ecU/LaQNb1vd7h10DWeY-YUroQ/view?embed&scrolling=true"
       allowfullscreen
       allow="fullscreen">
     </iframe>
@@ -258,6 +264,10 @@ document.getElementById("openBtn")
     musicBtn.style.display = "block";
 
     document.body.style.overflow = "auto";
+    document.documentElement.style.overflow = "auto";
+
+    document.body.style.height = "auto";
+    document.documentElement.style.height = "auto";
 
   },1000);
 
